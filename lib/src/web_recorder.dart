@@ -61,6 +61,7 @@ class WebRecorder {
       .getUserMedia(audio: true)
       .then((stream) {
           recorder = html.MediaRecorder(stream);
+          print(recorder.audioBitsPerSecond.toString() + " " + recorder.mimeType.toString());
           recorder.addEventListener('dataavailable', hundlerFunctionStream);
       })
       .whenComplete((){
